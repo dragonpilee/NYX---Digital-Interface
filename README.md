@@ -12,8 +12,9 @@
 
 Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google Gemini API. Built with React, TypeScript, and Tailwind CSS, it features real-time streaming responses and a clean, modern user interface inspired by a futuristic, high-tech world.
 
-<!-- Optional: Add a GIF or screenshot of the chatbot in action here -->
-<!-- ![Nyx Chatbot Demo](link_to_your_demo_gif_or_screenshot.png) -->
+---
+
+![Nyx Chatbot Screenshot](./photo.jpg)
 
 ---
 
@@ -83,6 +84,7 @@ Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google 
 ```
 .
 ├── README.md               # This file
+├── photo.jpg               # Screenshot of the chatbot
 ├── index.html              # Main HTML entry point
 ├── index.tsx               # React application entry point
 ├── App.tsx                 # Main application component (chat UI, logic)
