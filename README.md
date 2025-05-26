@@ -135,7 +135,7 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 ## 📄 License
 
-This project is unlicensed by default. You can add a `LICENSE` file (e.g., MIT License) if you wish to distribute it under specific terms.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
