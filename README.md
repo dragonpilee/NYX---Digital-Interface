@@ -10,7 +10,7 @@
 
 ---
 
-Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google Gemini API. Built with React, TypeScript, and Tailwind CSS, it features real-time streaming responses and a clean, modern user interface inspired by a futuristic, high-tech world.
+**Nyx** is a responsive, cyberpunk-themed chatbot application powered by the Google Gemini API. Built with React, TypeScript, and Tailwind CSS, it features real-time streaming responses and a clean, modern user interface inspired by a futuristic, high-tech world.
 
 ---
 
@@ -20,24 +20,24 @@ Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google 
 
 ## ✨ Features
 
-- **Cyberpunk Persona (Nyx)**: Engage with an AI that has a unique, cyberpunk-themed personality.
-- **Real-time Streaming Responses**: Messages from Nyx appear token by token, providing a dynamic chat experience.
-- **Responsive Design**: Adapts to various screen sizes, ensuring a seamless experience on desktop and mobile devices.
-- **Modern UI/UX**: Clean and intuitive interface styled with Tailwind CSS.
-- **Error Handling**: Gracefully handles API errors and informs the user.
-- **API Key Management**: Clear indicators for API key status (configured, missing, or initialization errors).
-- **Auto-Resizing Text Area**: Input field expands based on content.
-- **Send on Enter**: Supports sending messages with the Enter key (Shift+Enter for new lines).
-- **Loading Indicators**: Provides visual feedback when Nyx is processing a request.
+- **Cyberpunk Persona (Nyx):** Engage with an AI that has a unique, cyberpunk-themed personality.
+- **Real-time Streaming Responses:** Messages from Nyx appear token by token, providing a dynamic chat experience.
+- **Responsive Design:** Adapts to various screen sizes, ensuring a seamless experience on desktop and mobile devices.
+- **Modern UI/UX:** Clean and intuitive interface styled with Tailwind CSS.
+- **Error Handling:** Gracefully handles API errors and informs the user.
+- **API Key Management:** Clear indicators for API key status (configured, missing, or initialization errors).
+- **Auto-Resizing Text Area:** Input field expands based on content.
+- **Send on Enter:** Supports sending messages with the Enter key (Shift+Enter for new lines).
+- **Loading Indicators:** Provides visual feedback when Nyx is processing a request.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18, TypeScript
-- **Styling**: Tailwind CSS
-- **AI**: Google Gemini API (`@google/genai`)
-- **Build/Module System**: ES Modules (via `esm.sh` for browser-based development)
+- **Frontend:** React 18, TypeScript
+- **Styling:** Tailwind CSS
+- **AI:** Google Gemini API (`@google/genai`)
+- **Build/Module System:** ES Modules (via `esm.sh` for browser-based development)
 
 ---
 
@@ -60,22 +60,20 @@ Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google 
 2. **Configure API Key:**
     This project **requires** the Google Gemini API key to be set as an environment variable named `API_KEY`.
 
-    **IMPORTANT**: For this browser-based ES Module setup, `process.env.API_KEY` is typically injected during a build step or by a server. If you are running this directly in the browser without a build process, you'll need to ensure `process.env.API_KEY` is defined in the scope where `App.tsx` is executed.
-
-    For example, you might modify `index.html` to include a script tag *before* your main script:
+    **For local development (browser-only):**  
+    You may temporarily inject your API key in `index.html` before your main script:
     ```html
     <script>
-      // WARNING: This is for local development/testing ONLY.
-      // Do NOT commit your API key to version control.
-      // In a real deployment, this should be handled securely by a build process or server.
+      // WARNING: For local development/testing ONLY. Remove before sharing or deploying!
       window.process = { env: { API_KEY: "YOUR_GEMINI_API_KEY_HERE" } };
     </script>
     <script type="module" src="/index.tsx"></script>
     ```
-    **Remember to remove your API key before committing or deploying!** The ideal way is to have a build process that replaces `process.env.API_KEY`.
+    **Never commit your API key to version control.**  
+    The ideal way is to have a build process that replaces `process.env.API_KEY`.
 
 3. **Run the application:**
-    Open the `index.html` file in your web browser. If you are using a local development server (like `live-server` or VS Code's Live Server extension), serve the root directory of the project.
+    Open the `index.html` file in your web browser. For best results, use a local development server (like `live-server` or VS Code's Live Server extension).
 
 ---
 
@@ -101,25 +99,24 @@ Nyx is a responsive, cyberpunk-themed chatbot application powered by the Google 
 
 The AI's persona ("Nyx") and behavior are configured in `App.tsx`:
 
-- **System Instruction**: The `systemInstruction` within the `ai.chats.create` config guides Nyx's personality and response style.
+- **System Instruction:** The `systemInstruction` within the chat config guides Nyx's personality and response style.
     ```typescript
     chatRef.current = ai.chats.create({
       model: 'gemini-2.5-flash-preview-04-17',
       config: {
         systemInstruction: 'You are Nyx, a cyberpunk-themed AI assistant...',
-        // thinkingConfig: { thinkingBudget: 0 } // Optional: For lower latency
       },
     });
     ```
-- **Initial Message**: The first message from Nyx is set in the `useEffect` hook.
+- **Initial Message:** The first message from Nyx is set in the `useEffect` hook.
 
 ---
 
 ## 🔧 Customization
 
-- **AI Persona**: Modify the `systemInstruction` in `App.tsx` to change Nyx's character, knowledge domain, or response style.
-- **Styling**: Update Tailwind CSS classes across components to alter the visual appearance.
-- **Model**: You can experiment with other compatible Gemini models by changing the `model` string in `App.tsx`.
+- **AI Persona:** Modify the `systemInstruction` in `App.tsx` to change Nyx's character, knowledge domain, or response style.
+- **Styling:** Update Tailwind CSS classes across components to alter the visual appearance.
+- **Model:** You can experiment with other compatible Gemini models by changing the `model` string in `App.tsx`.
 
 ---
 
